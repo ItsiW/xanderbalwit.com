@@ -1,0 +1,24 @@
+---
+interface Props {
+  title: string;
+  publication: string;
+  description: string;
+  url: string;
+  year?: number;
+}
+
+const { title, publication, description, url, year } = Astro.props;
+---
+
+<a href={url} target="_blank" rel="noopener" class="group block no-underline">
+  <article class="border-l-4 border-fire-yellow pl-6 py-4 hover:border-fire-orange-deep transition-colors">
+    <div class="flex items-baseline gap-3 flex-wrap">
+      <h3 class="font-serif text-xl text-charcoal group-hover:text-fire-orange-deep transition-colors">
+        {title}
+      </h3>
+      {year && <span class="text-sm text-stone">{year}</span>}
+    </div>
+    <p class="text-sm font-medium text-fire-amber mt-1">{publication}</p>
+    <p class="text-charcoal-light mt-2 text-sm leading-relaxed">{description}</p>
+  </article>
+</a>

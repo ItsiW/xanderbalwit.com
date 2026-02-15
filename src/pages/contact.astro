@@ -1,0 +1,86 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<BaseLayout title="Contact" description="Get in touch with Xander Balwit — writer, editor, and Editor-in-Chief at Asimov Press.">
+  <Hero title="Contact" subtitle="I'd love to hear from you." />
+
+  <section class="max-w-5xl mx-auto px-6 py-16 md:py-24">
+    <div class="max-w-2xl">
+      <div class="space-y-8">
+        <!-- Pitches -->
+        <div class="border-l-4 border-fire-yellow pl-6 py-2">
+          <h3 class="font-serif text-xl text-charcoal">Pitches & Submissions</h3>
+          <p class="mt-2 text-charcoal-light">
+            Want to write for Asimov Press? Send a pitch to
+            <a href="mailto:editors@asimov.com">editors@asimov.com</a>
+          </p>
+        </div>
+
+        <!-- General -->
+        <div class="border-l-4 border-fire-yellow pl-6 py-2">
+          <h3 class="font-serif text-xl text-charcoal">General Inquiries</h3>
+          <p class="mt-2 text-charcoal-light">
+            For speaking, collaborations, or other inquiries, reach me on social media or through Asimov Press.
+          </p>
+        </div>
+      </div>
+
+      <!-- Social Links -->
+      <div class="mt-16">
+        <h2 class="font-serif text-2xl text-charcoal mb-8">Find Me Online</h2>
+        <div class="grid gap-4 sm:grid-cols-2">
+          <a
+            href="https://x.com/XanderBalwit"
+            target="_blank"
+            rel="noopener"
+            class="group flex items-center gap-4 p-4 bg-cream-dark/50 rounded-lg border border-cream-dark hover:border-fire-yellow transition-colors no-underline"
+          >
+            <div class="w-10 h-10 bg-charcoal rounded-full flex items-center justify-center text-cream text-sm font-bold shrink-0">X</div>
+            <div>
+              <p class="font-medium text-charcoal group-hover:text-fire-orange-deep transition-colors">X / Twitter</p>
+              <p class="text-sm text-stone">@XanderBalwit</p>
+            </div>
+          </a>
+          <a
+            href="https://www.instagram.com/xanderbalwit/"
+            target="_blank"
+            rel="noopener"
+            class="group flex items-center gap-4 p-4 bg-cream-dark/50 rounded-lg border border-cream-dark hover:border-fire-yellow transition-colors no-underline"
+          >
+            <div class="w-10 h-10 bg-gradient-to-br from-fire-orange to-fire-yellow-deep rounded-full flex items-center justify-center text-cream text-sm font-bold shrink-0">IG</div>
+            <div>
+              <p class="font-medium text-charcoal group-hover:text-fire-orange-deep transition-colors">Instagram</p>
+              <p class="text-sm text-stone">@xanderbalwit</p>
+            </div>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/xander-balwit/"
+            target="_blank"
+            rel="noopener"
+            class="group flex items-center gap-4 p-4 bg-cream-dark/50 rounded-lg border border-cream-dark hover:border-fire-yellow transition-colors no-underline"
+          >
+            <div class="w-10 h-10 bg-[#0A66C2] rounded-full flex items-center justify-center text-cream text-sm font-bold shrink-0">in</div>
+            <div>
+              <p class="font-medium text-charcoal group-hover:text-fire-orange-deep transition-colors">LinkedIn</p>
+              <p class="text-sm text-stone">xander-balwit</p>
+            </div>
+          </a>
+          <a
+            href="https://press.asimov.com"
+            target="_blank"
+            rel="noopener"
+            class="group flex items-center gap-4 p-4 bg-cream-dark/50 rounded-lg border border-cream-dark hover:border-fire-yellow transition-colors no-underline"
+          >
+            <div class="w-10 h-10 bg-fire-orange-deep rounded-full flex items-center justify-center text-cream text-sm font-bold shrink-0">AP</div>
+            <div>
+              <p class="font-medium text-charcoal group-hover:text-fire-orange-deep transition-colors">Asimov Press</p>
+              <p class="text-sm text-stone">press.asimov.com</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

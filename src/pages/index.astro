@@ -1,0 +1,104 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ArticleCard from '../components/ArticleCard.astro';
+---
+
+<BaseLayout title="Home" description="Xander Balwit — Writer, editor, and builder exploring how science and storytelling shape the future.">
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-fire-orange-deep via-fire-orange to-fire-yellow">
+    <div class="max-w-5xl mx-auto px-6 py-24 md:py-36">
+      <h1 class="font-serif font-bold text-cream text-5xl md:text-7xl">
+        Xander Balwit
+      </h1>
+      <p class="mt-6 text-cream-dark/90 text-xl md:text-2xl max-w-2xl leading-relaxed">
+        Writer, editor, and builder exploring how science and storytelling shape the future.
+      </p>
+      <p class="mt-4 text-cream-dark/70 text-lg">
+        Editor-in-Chief at <a href="https://press.asimov.com" target="_blank" rel="noopener" class="text-cream underline decoration-cream/40 hover:decoration-cream transition-colors">Asimov Press</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- Intro -->
+  <section class="max-w-5xl mx-auto px-6 py-16 md:py-24">
+    <div class="max-w-3xl">
+      <h2 class="font-serif text-3xl md:text-4xl text-charcoal">About</h2>
+      <p class="mt-6 text-charcoal-light text-lg leading-relaxed">
+        I'm the editor-in-chief of <a href="https://press.asimov.com" target="_blank" rel="noopener">Asimov Press</a>, a digital magazine dedicated to biotechnology, metascience, and scientific progress. My writing explores the technologies and ideas that enable flourishing — from animal welfare and longevity to food systems and neuroscience.
+      </p>
+      <p class="mt-4 text-charcoal-light text-lg leading-relaxed">
+        Before building Asimov Press, I worked as a wildland firefighter, managed a political campaign, and studied at Portland State University. I'm unremittingly interested in humanity's future — the plausible, the dismal, and the hopeful.
+      </p>
+      <a href="/about" class="inline-block mt-6 text-fire-orange-deep font-medium hover:text-fire-amber transition-colors">
+        Read more &rarr;
+      </a>
+    </div>
+  </section>
+
+  <!-- Featured Writing -->
+  <section class="bg-cream-dark/30">
+    <div class="max-w-5xl mx-auto px-6 py-16 md:py-24">
+      <h2 class="font-serif text-3xl md:text-4xl text-charcoal">Featured Writing</h2>
+      <div class="mt-10 space-y-6">
+        <ArticleCard
+          title="An Antivenom Cocktail, Made by a Llama"
+          publication="Asimov Press"
+          description="A new broad-coverage antivenom, made by mixing eight different nanobodies, protects mice against snakebites from 17 of 18 deadly species in Africa."
+          url="https://www.asimov.press/p/broad-antivenom"
+          year={2025}
+        />
+        <ArticleCard
+          title="Barcoding Brains"
+          publication="Asimov Press"
+          description="Connectomics — a technique that maps physical connections between neural cells — is expensive and inefficient. E11 Bio is designing a tool to expedite progress."
+          url="https://www.asimov.press/p/barcoding-brains"
+          year={2025}
+        />
+        <ArticleCard
+          title="Animals as Chemical Factories"
+          publication="Works in Progress"
+          description="Horses bled for antivenom, crabs drained for endotoxin tests, and silkworms boiled for silk. Science can now replace these practices with synthetic alternatives."
+          url="https://worksinprogress.co/issue/animals-as-chemical-factories/"
+          year={2024}
+        />
+        <ArticleCard
+          title="Raising Welfare for Lab Rodents"
+          publication="Asimov Press"
+          description="The science of animal welfare is exploding, offering new ways to improve conditions for millions of research animals a year."
+          url="https://www.asimov.press/p/rodent-welfare"
+          year={2024}
+        />
+      </div>
+      <a href="/writing" class="inline-block mt-10 text-fire-orange-deep font-medium hover:text-fire-amber transition-colors">
+        View all writing &rarr;
+      </a>
+    </div>
+  </section>
+
+  <!-- Featured Fiction -->
+  <section class="max-w-5xl mx-auto px-6 py-16 md:py-24">
+    <h2 class="font-serif text-3xl md:text-4xl text-charcoal">Fiction</h2>
+    <p class="mt-4 text-charcoal-light text-lg max-w-2xl">
+      Speculative stories imagining plausible and positive futures — from restaurants embracing GMOs to zoos preserving disease vectors.
+    </p>
+    <div class="mt-10 space-y-6">
+      <ArticleCard
+        title="Farma: Speculative Gastronomy"
+        publication="Asimov Press · Fiction"
+        description="A restaurant that is bullish on GMOs and food technology imagines how our descendants might eat to support a food system less taxing on land, water, and energy."
+        url="https://www.asimov.press/p/farma"
+        year={2024}
+      />
+      <ArticleCard
+        title="The Vector Zoo"
+        publication="Asimov Press · Fiction"
+        description="In the year 2126, visitors tour a zoo that preserves the disease-carrying animals humanity has otherwise eradicated from the wild."
+        url="https://www.asimov.press/p/the-vector-zoo"
+        year={2024}
+      />
+    </div>
+    <a href="/fiction" class="inline-block mt-10 text-fire-orange-deep font-medium hover:text-fire-amber transition-colors">
+      View all fiction &rarr;
+    </a>
+  </section>
+</BaseLayout>

@@ -1,0 +1,68 @@
+---
+const currentPath = Astro.url.pathname;
+const links = [
+  { href: '/', label: 'Home' },
+  { href: '/about', label: 'About' },
+  { href: '/writing', label: 'Writing' },
+  { href: '/fiction', label: 'Fiction' },
+  { href: '/projects', label: 'Projects' },
+  { href: '/contact', label: 'Contact' },
+];
+---
+
+<nav class="bg-cream border-b border-cream-dark">
+  <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="/" class="font-serif text-xl font-bold text-charcoal no-underline hover:text-fire-orange-deep transition-colors">
+      Xander Balwit
+    </a>
+    <button
+      id="menu-toggle"
+      class="md:hidden text-charcoal p-2"
+      aria-label="Toggle menu"
+    >
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+    <div id="nav-links" class="hidden md:flex items-center gap-8">
+      {links.map(link => (
+        <a
+          href={link.href}
+          class:list={[
+            'text-sm tracking-wide no-underline transition-colors',
+            currentPath === link.href || (link.href !== '/' && currentPath.startsWith(link.href))
+              ? 'text-fire-orange-deep font-medium'
+              : 'text-charcoal-light hover:text-fire-orange-deep'
+          ]}
+        >
+          {link.label}
+        </a>
+      ))}
+    </div>
+  </div>
+  <div id="mobile-menu" class="hidden md:hidden border-t border-cream-dark">
+    <div class="px-6 py-4 flex flex-col gap-4">
+      {links.map(link => (
+        <a
+          href={link.href}
+          class:list={[
+            'text-sm tracking-wide no-underline transition-colors',
+            currentPath === link.href || (link.href !== '/' && currentPath.startsWith(link.href))
+              ? 'text-fire-orange-deep font-medium'
+              : 'text-charcoal-light hover:text-fire-orange-deep'
+          ]}
+        >
+          {link.label}
+        </a>
+      ))}
+    </div>
+  </div>
+</nav>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  toggle?.addEventListener('click', () => {
+    menu?.classList.toggle('hidden');
+  });
+</script>

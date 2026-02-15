@@ -1,0 +1,31 @@
+---
+interface Props {
+  title: string;
+  subtitle?: string;
+  large?: boolean;
+}
+
+const { title, subtitle, large = false } = Astro.props;
+---
+
+<section class="bg-gradient-to-br from-fire-orange-deep via-fire-orange to-fire-yellow">
+  <div class:list={[
+    'max-w-5xl mx-auto px-6',
+    large ? 'py-24 md:py-36' : 'py-16 md:py-24'
+  ]}>
+    <h1 class:list={[
+      'font-serif font-bold text-cream',
+      large ? 'text-5xl md:text-7xl' : 'text-4xl md:text-5xl'
+    ]}>
+      {title}
+    </h1>
+    {subtitle && (
+      <p class:list={[
+        'mt-4 text-cream-dark/90',
+        large ? 'text-xl md:text-2xl max-w-2xl' : 'text-lg md:text-xl max-w-xl'
+      ]}>
+        {subtitle}
+      </p>
+    )}
+  </div>
+</section>

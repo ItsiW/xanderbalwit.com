@@ -1,0 +1,84 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import ArticleCard from '../components/ArticleCard.astro';
+---
+
+<BaseLayout title="Writing" description="Published non-fiction by Xander Balwit — articles on biotechnology, animal welfare, metascience, and more.">
+  <Hero title="Writing" subtitle="Published non-fiction on biotechnology, animal welfare, neuroscience, and the future of science." />
+
+  <section class="max-w-5xl mx-auto px-6 py-16 md:py-24">
+    <!-- 2025 -->
+    <h2 class="font-serif text-2xl text-charcoal mb-8 pb-2 border-b-2 border-fire-yellow">2025</h2>
+    <div class="space-y-6 mb-16">
+      <ArticleCard
+        title="A Most Important Mustard"
+        publication="Asimov Press · The Column"
+        description="On the origins of Arabidopsis thaliana, the premier model for plant biology. This essay will appear in the forthcoming book, 'Making the Modern Laboratory.'"
+        url="https://www.asimov.press/p/arabidopsis"
+        year={2025}
+      />
+      <ArticleCard
+        title="An Antivenom Cocktail, Made by a Llama"
+        publication="Asimov Press · The Column"
+        description="A new broad-coverage antivenom, made by mixing eight different nanobodies, protects mice against snakebites from 17 of 18 deadly species in Africa."
+        url="https://www.asimov.press/p/broad-antivenom"
+        year={2025}
+      />
+      <ArticleCard
+        title="Leeches and the Legitimizing of Folk-Medicine"
+        publication="Asimov Press · The Long Read"
+        description="While we've derived useful molecules from the leech, live leech therapy has been largely marginalized in the West. It is time we reevaluate why. Co-authored with Khushi Mittal."
+        url="https://www.asimov.press/p/leeches"
+        year={2025}
+      />
+      <ArticleCard
+        title="A Night of Food Futurism"
+        publication="Asimov Press · Update"
+        description="A science fiction story brought to life through a pro-GMO dinner during SF Climate Week. An account of the Farma pop-up restaurant."
+        url="https://www.asimov.press/p/food-futurism"
+        year={2025}
+      />
+      <ArticleCard
+        title="Barcoding Brains"
+        publication="Asimov Press · The Long Read"
+        description="Connectomics — a technique that maps physical connections between neural cells — is expensive and inefficient. E11 Bio, a non-profit research group, is designing a tool to expedite progress."
+        url="https://www.asimov.press/p/barcoding-brains"
+        year={2025}
+      />
+      <ArticleCard
+        title="Announcing the Pantone Color of the Year 02123"
+        publication="Long Now Foundation · Ideas"
+        description="A speculative look at color, culture, and long-term thinking for the Long Now Foundation."
+        url="https://longnow.org/ideas/announcing-the-pantone-color-of-the-year-02123/"
+        year={2025}
+      />
+    </div>
+
+    <!-- 2024 -->
+    <h2 class="font-serif text-2xl text-charcoal mb-8 pb-2 border-b-2 border-fire-yellow">2024</h2>
+    <div class="space-y-6 mb-16">
+      <ArticleCard
+        title="Animals as Chemical Factories"
+        publication="Works in Progress"
+        description="Horses bled for antivenom, crabs drained for endotoxin tests, and silkworms boiled for silk. Science can now replace these practices with synthetic alternatives — but we need to find ways to scale them. Co-authored with Niko McCarty."
+        url="https://worksinprogress.co/issue/animals-as-chemical-factories/"
+        year={2024}
+      />
+      <ArticleCard
+        title="Raising Welfare for Lab Rodents"
+        publication="Asimov Press · The Long Read"
+        description="The science of animal welfare is exploding, offering new ways to improve conditions for millions of research animals a year."
+        url="https://www.asimov.press/p/rodent-welfare"
+        year={2024}
+      />
+      <ArticleCard
+        title="Lessons on Starting a Magazine"
+        publication="Asimov Press · The Long Read"
+        description="After releasing a first book, hosting events, and commissioning about 35 essays, the Asimov Press team shares what they've learned about building a magazine from scratch."
+        url="https://www.asimov.press/p/lessons-on-starting-a-magazine"
+        year={2024}
+      />
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,50 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+---
+
+<BaseLayout title="Projects" description="Projects by Xander Balwit — Asimov Press, FARMA pop-up restaurant, books, and more.">
+  <Hero title="Projects" subtitle="Building things at the intersection of science, publishing, and storytelling." />
+
+  <section class="max-w-5xl mx-auto px-6 py-16 md:py-24">
+    <div class="grid gap-8 md:grid-cols-2">
+      <ProjectCard
+        title="Asimov Press"
+        role="Editor-in-Chief · Co-founder"
+        description="A digital magazine dedicated to biotechnology, metascience, and scientific progress. We publish long-form investigations, columns, data briefs, and speculative fiction — all focused on the science and technologies that promote flourishing. Editorially independent, part of Asimov. Since launch in late 2023, we've published over 100,000 words and built a team of six."
+        url="https://press.asimov.com"
+      />
+      <ProjectCard
+        title="FARMA Pop-Up Restaurant"
+        role="Creator & Host"
+        description="A pro-GMO dinner experience set 30 years in the future, inspired by my speculative fiction piece 'Farma.' Hosted during SF Climate Week 2025 in a Victorian on Valencia Street, the menu showcased food technologies like extrusion, cellular agriculture, molecular gastronomy, and GMOs — embodying the belief that technology and R&D, not romanticism, will change our diets."
+        url="https://www.asimov.press/p/food-futurism"
+      />
+      <ProjectCard
+        title="Making the Modern Laboratory"
+        role="Author · Forthcoming Book"
+        description="An upcoming Asimov Press book telling the story of how the tools, materials, and methods of the molecular biology lab arrived there and how they might evolve in the future. Contributing essays on topics including Arabidopsis thaliana."
+        url="https://www.asimov.press/p/making-the-modern-laboratory"
+      />
+      <ProjectCard
+        title="Origins (Book)"
+        role="Editor"
+        description="The inaugural book from Asimov Press, featuring eleven essays about scientific progress from authors including Michael Elowitz, Tom Ireland, and José Luis Ricón. Printed on Cougar White Vellum paper with foil-stamped covers and Smyth-sewn bindings. All profits donated to Malaria Consortium."
+        url="https://press.asimov.com/books"
+      />
+      <ProjectCard
+        title="DNA Capsule Edition (Book)"
+        role="Editor"
+        description="Our second book featuring nine essays and three works of science fiction. In collaboration with CATALOG, Imagene, and Plasmidsaurus, we encoded a complete copy of the book into DNA — the first commercially-available book written in DNA and sold in both mediums."
+        url="https://press.asimov.com/books"
+      />
+      <ProjectCard
+        title="Long Now Foundation"
+        role="Ideas Contributor"
+        description="Contributing writing to the Long Now Foundation, exploring long-term thinking and humanity's future. The Foundation fosters creative responsibility in the framework of the next 10,000 years."
+        url="https://longnow.org/people/xander-balwit/"
+      />
+    </div>
+  </section>
+</BaseLayout>

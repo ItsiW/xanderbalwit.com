@@ -1,0 +1,51 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import ArticleCard from '../components/ArticleCard.astro';
+---
+
+<BaseLayout title="Fiction" description="Speculative fiction by Xander Balwit — imagining plausible and positive futures rooted in real science.">
+  <Hero title="Fiction" subtitle="Speculative stories imagining plausible futures — from food-tech restaurants to a world without death." />
+
+  <section class="max-w-5xl mx-auto px-6 py-16 md:py-24">
+    <div class="max-w-3xl mb-12">
+      <p class="text-charcoal-light text-lg leading-relaxed">
+        My fiction imagines the futures that science and technology might bring — not utopian fantasies, but plausible worlds shaped by real research and real choices. These stories explore what happens when biotechnology, longevity medicine, and genetic engineering reshape how we live, eat, and relate to the natural world.
+      </p>
+    </div>
+
+    <div class="space-y-8">
+      <ArticleCard
+        title="Eulogy to the Obits"
+        publication="Asimov Press · Fiction · Issue 06"
+        description="With a litany of gene therapies and longevity medicine staving off biological death, those paid to write about it must reimagine their craft. A story about an obituary writer in a world where no one dies."
+        url="https://press.asimov.com/articles/obit"
+        year={2025}
+      />
+      <ArticleCard
+        title="Farma: Speculative Gastronomy"
+        publication="Asimov Press · Fiction · Issue 04"
+        description="Despite years on the defensive, GMOs and other food technology can improve human and planetary health. A story about a futuristic restaurant in San Francisco that embraces this potential — later brought to life as a real pop-up dinner during SF Climate Week 2025."
+        url="https://www.asimov.press/p/farma"
+        year={2024}
+      />
+      <ArticleCard
+        title="The Vector Zoo"
+        publication="Asimov Press · Fiction · Issue 02"
+        description="Please note: The Arcade of Intentional Extinction will be closed for renovations between December 5th, 2126 and March 1st, 2127. A guided tour of a future zoo that preserves the disease-carrying animals humanity has eradicated from the wild."
+        url="https://www.asimov.press/p/the-vector-zoo"
+        year={2024}
+      />
+    </div>
+
+    <div class="mt-16 p-8 bg-gradient-to-br from-fire-orange-deep/10 to-fire-yellow/10 rounded-lg border border-fire-yellow/30">
+      <h3 class="font-serif text-xl text-charcoal">Fiction at Asimov Press</h3>
+      <p class="mt-3 text-charcoal-light leading-relaxed">
+        At Asimov Press, we publish fiction alongside rigorous scientific writing because stories inspire readers to imagine the futures that research might make possible. Our fiction is grounded in real science and designed to spark serious thought about the choices ahead.
+      </p>
+      <a href="https://www.asimov.press" target="_blank" rel="noopener" class="inline-block mt-4 text-fire-orange-deep font-medium hover:text-fire-amber transition-colors">
+        Read more at Asimov Press &rarr;
+      </a>
+    </div>
+  </section>
+</BaseLayout>

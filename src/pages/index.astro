@@ -1,104 +1,334 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ArticleCard from '../components/ArticleCard.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import ogImages from '../data/og-images.json';
 ---
 
-<BaseLayout title="Home" description="Xander Balwit — Writer, editor, and builder exploring how science and storytelling shape the future.">
+<BaseLayout title="Xander Balwit" description="Xander Balwit — Editorial Team at Anthropic. Former Editor-in-Chief at Asimov Press. Writer exploring biotechnology, animal welfare, and the future of science.">
   <!-- Hero -->
-  <section class="bg-gradient-to-br from-fire-orange-deep via-fire-orange to-fire-yellow">
-    <div class="max-w-5xl mx-auto px-6 py-24 md:py-36">
-      <h1 class="font-serif font-bold text-cream text-5xl md:text-7xl">
-        Xander Balwit
-      </h1>
-      <p class="mt-6 text-cream-dark/90 text-xl md:text-2xl max-w-2xl leading-relaxed">
-        Writer, editor, and builder exploring how science and storytelling shape the future.
-      </p>
-      <p class="mt-4 text-cream-dark/70 text-lg">
-        Editor-in-Chief at <a href="https://press.asimov.com" target="_blank" rel="noopener" class="text-cream underline decoration-cream/40 hover:decoration-cream transition-colors">Asimov Press</a>
-      </p>
+  <section class="bg-primary-red">
+    <div class="max-w-5xl mx-auto px-6 py-24 md:py-36 md:flex md:flex-row md:items-start md:gap-16">
+      <!-- Mobile: image + name side by side; Desktop: image standalone in flex row -->
+      <div class="flex items-center gap-5 md:block">
+        <img
+          src="/xander.png"
+          alt="Xander Balwit"
+          class="w-24 h-24 md:w-64 md:h-64 object-cover rounded shrink-0"
+        />
+        <div class="md:hidden">
+          <h1 class="font-serif font-bold text-primary-yellow text-4xl">
+            Xander Balwit
+          </h1>
+          <p class="mt-1 font-serif text-cream text-xl">
+            Writer <span class="text-primary-yellow">&</span> Editor
+          </p>
+        </div>
+      </div>
+      <div class="mt-6 md:mt-0">
+        <h1 class="hidden md:block font-serif font-bold text-primary-yellow text-7xl">
+          Xander Balwit
+        </h1>
+        <p class="hidden md:block mt-3 font-serif text-cream text-3xl">
+          Writer <span class="text-primary-yellow">&</span> Editor
+        </p>
+        <p class="mt-4 md:mt-4 text-cream/70 text-lg max-w-2xl">
+          The science, technology, and ideas that promote flourishing
+        </p>
+        <p class="mt-6 text-cream text-lg">
+          Editorial Team at <a href="https://www.anthropic.com" target="_blank" rel="noopener" class="text-primary-yellow font-medium underline decoration-primary-yellow/40 hover:decoration-primary-yellow transition-colors">Anthropic</a>
+        </p>
+        <p class="mt-2 text-cream/60 text-base">
+          Former Editor-in-Chief at <a href="https://press.asimov.com" target="_blank" rel="noopener" class="text-cream underline decoration-cream/40 hover:decoration-cream transition-colors">Asimov Press</a>
+        </p>
+      </div>
     </div>
   </section>
 
-  <!-- Intro -->
-  <section class="max-w-5xl mx-auto px-6 py-16 md:py-24">
+  <!-- About -->
+  <section id="about" class="max-w-5xl mx-auto px-6 py-16 md:py-24">
     <div class="max-w-3xl">
-      <h2 class="font-serif text-3xl md:text-4xl text-charcoal">About</h2>
-      <p class="mt-6 text-charcoal-light text-lg leading-relaxed">
-        I'm the editor-in-chief of <a href="https://press.asimov.com" target="_blank" rel="noopener">Asimov Press</a>, a digital magazine dedicated to biotechnology, metascience, and scientific progress. My writing explores the technologies and ideas that enable flourishing — from animal welfare and longevity to food systems and neuroscience.
+      <p class="text-charcoal-light text-lg leading-relaxed">
+        I work on the editorial team at Anthropic. Previously, I was the editor-in-chief of <a href="https://press.asimov.com" target="_blank" rel="noopener">Asimov Press</a>, a digital magazine dedicated to biotechnology, metascience, and scientific progress. My writing explores the technologies and ideas that enable flourishing — from animal welfare and longevity to food systems and neuroscience.
       </p>
       <p class="mt-4 text-charcoal-light text-lg leading-relaxed">
-        Before building Asimov Press, I worked as a wildland firefighter, managed a political campaign, and studied at Portland State University. I'm unremittingly interested in humanity's future — the plausible, the dismal, and the hopeful.
+        Before building Asimov Press, I worked as a wildland firefighter, managed a political campaign, and studied Arts and Letters, Liberal Studies, and German Fairy Tales at Portland State University.
       </p>
-      <a href="/about" class="inline-block mt-6 text-fire-orange-deep font-medium hover:text-fire-amber transition-colors">
-        Read more &rarr;
-      </a>
+      <p class="mt-4 text-charcoal-light text-lg leading-relaxed">
+        My work has appeared in <a href="https://press.asimov.com" target="_blank" rel="noopener">Asimov Press</a>, <a href="https://worksinprogress.co" target="_blank" rel="noopener">Works in Progress</a>, <a href="https://asteriskmag.com" target="_blank" rel="noopener">Asterisk Magazine</a>, the <a href="https://longnow.org" target="_blank" rel="noopener">Long Now Foundation</a>, and <a href="https://longviewer.substack.com" target="_blank" rel="noopener">The Long View</a> (with Richard Fisher). I also write a personal Substack called <a href="https://whatsworking.substack.com" target="_blank" rel="noopener">What's Working</a>, covering moral and technological progress, positive futurism, and dalliances into the life sciences.
+      </p>
     </div>
   </section>
 
-  <!-- Featured Writing -->
-  <section class="bg-cream-dark/30">
+  <!-- Projects -->
+  <section id="projects" class="bg-teal">
     <div class="max-w-5xl mx-auto px-6 py-16 md:py-24">
-      <h2 class="font-serif text-3xl md:text-4xl text-charcoal">Featured Writing</h2>
-      <div class="mt-10 space-y-6">
+      <h2 class="font-serif text-3xl md:text-4xl text-primary-yellow">Projects</h2>
+      <div class="mt-10 grid gap-8 md:grid-cols-2">
+        <ProjectCard
+          title="Asimov Press"
+          role="Former Editor-in-Chief · Co-founder"
+          description="A digital magazine dedicated to biotechnology, metascience, and scientific progress. We published long-form investigations, columns, data briefs, and speculative fiction — all focused on the science and technologies that promote flourishing."
+          url="https://press.asimov.com"
+        />
+        <ProjectCard
+          title="FARMA Pop-Up Restaurant"
+          role="Creator & Host · Featured in The Economist"
+          description="A pro-GMO dinner experience set 30 years in the future, inspired by my speculative fiction piece 'Farma.' Hosted during SF Climate Week 2025, the menu showcased food technologies like extrusion, cellular agriculture, molecular gastronomy, and GMOs."
+          url="https://www.economist.com/science-and-technology/2025/09/15/pink-pineapples-and-lab-grown-meat-tasting-the-foods-of-the-future"
+        />
+        <ProjectCard
+          title="Making the Modern Laboratory"
+          role="Author · Forthcoming Book"
+          description="An upcoming Asimov Press book telling the story of how the tools, materials, and methods of the molecular biology lab arrived there and how they might evolve in the future."
+          url="https://www.asimov.press/p/making-the-modern-laboratory"
+        />
+<ProjectCard
+          title="The First Book Encoded in DNA"
+          role="Editor · Asimov Press Issue 02"
+          description="Nine essays and three works of science fiction, published as Issue 02 of Asimov Press. In collaboration with CATALOG, Imagene, and Plasmidsaurus, we encoded a complete copy of the book into DNA — the first commercially-available book written in DNA and sold in both mediums."
+          url="https://press.asimov.com/books"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Writing (non-fiction + fiction combined) -->
+  <section id="writing" class="bg-primary-yellow">
+    <div class="max-w-5xl mx-auto px-6 py-16 md:py-24">
+      <h2 class="font-serif text-3xl md:text-4xl text-charcoal">Writing</h2>
+
+      <!-- 2025 -->
+      <h3 class="font-serif text-2xl text-cream bg-primary-red inline-block px-4 py-2 mt-10 mb-8">2025</h3>
+      <div class="space-y-6 mb-16">
+        <ArticleCard
+          title="A Most Important Mustard"
+          publication="Asimov Press · The Column"
+          description="On the origins of Arabidopsis thaliana, the premier model for plant biology. This essay will appear in the forthcoming book, 'Making the Modern Laboratory.'"
+          url="https://www.asimov.press/p/arabidopsis"
+          year="Nov 2025"
+          image={ogImages["https://www.asimov.press/p/arabidopsis"]}
+        />
+        <ArticleCard
+          title="Snapping Necks"
+          publication="What's Working · Substack"
+          description="On bringing myself to kill injured animals."
+          url="https://whatsworking.substack.com/p/snapping-necks"
+          year="Nov 2025"
+          image={ogImages["https://whatsworking.substack.com/p/snapping-necks"]}
+        />
+        <ArticleCard
+          title="An Injury Sustained in Hot Girl Yoga Left Me With Nerd Neck"
+          publication="What's Working · Substack"
+          description="I used to be hot and have normal posture. Now my chin juts out, and I walk funny. Here is my story."
+          url="https://whatsworking.substack.com/p/an-injury-sustained-in-hot-girl-yoga"
+          year="Nov 2025"
+          image={ogImages["https://whatsworking.substack.com/p/an-injury-sustained-in-hot-girl-yoga"]}
+        />
+        <ArticleCard
+          title="Squished Rats and Marigolds"
+          publication="What's Working · Substack"
+          description="A love letter to the Mission District on Halloween."
+          url="https://whatsworking.substack.com/p/squished-rats-and-marigolds"
+          year="Nov 2025"
+          image={ogImages["https://whatsworking.substack.com/p/squished-rats-and-marigolds"]}
+        />
         <ArticleCard
           title="An Antivenom Cocktail, Made by a Llama"
-          publication="Asimov Press"
+          publication="Asimov Press · The Column"
           description="A new broad-coverage antivenom, made by mixing eight different nanobodies, protects mice against snakebites from 17 of 18 deadly species in Africa."
           url="https://www.asimov.press/p/broad-antivenom"
-          year={2025}
+          year="Oct 2025"
+          image={ogImages["https://www.asimov.press/p/broad-antivenom"]}
+        />
+        <ArticleCard
+          title="Leeches and the Legitimizing of Folk-Medicine"
+          publication="Asimov Press · The Long Read"
+          description="While we've derived useful molecules from the leech, live leech therapy has been largely marginalized in the West. It is time we reevaluate why. Co-authored with Khushi Mittal."
+          url="https://www.asimov.press/p/leeches"
+          year="Aug 2025"
+          image={ogImages["https://www.asimov.press/p/leeches"]}
+        />
+        <ArticleCard
+          title="A Night of Food Futurism"
+          publication="Asimov Press · Update"
+          description="A science fiction story brought to life through a pro-GMO dinner during SF Climate Week."
+          url="https://www.asimov.press/p/food-futurism"
+          year="Jun 2025"
+          image={ogImages["https://www.asimov.press/p/food-futurism"]}
+        />
+        <ArticleCard
+          title="Eulogy to the Obits"
+          publication="Asimov Press · Fiction · Issue 06"
+          description="With a litany of gene therapies and longevity medicine staving off biological death, those paid to write about it must reimagine their craft. A story about an obituary writer in a world where no one dies."
+          url="https://press.asimov.com/articles/obit"
+          year="Apr 2025"
+          image={ogImages["https://press.asimov.com/articles/obit"]}
         />
         <ArticleCard
           title="Barcoding Brains"
-          publication="Asimov Press"
-          description="Connectomics — a technique that maps physical connections between neural cells — is expensive and inefficient. E11 Bio is designing a tool to expedite progress."
+          publication="Asimov Press · The Long Read"
+          description="Connectomics — a technique that maps physical connections between neural cells — is expensive and inefficient. E11 Bio, a non-profit research group, is designing a tool to expedite progress."
           url="https://www.asimov.press/p/barcoding-brains"
-          year={2025}
+          year="Feb 2025"
+          image={ogImages["https://www.asimov.press/p/barcoding-brains"]}
         />
+      </div>
+
+      <!-- 2024 -->
+      <h3 class="font-serif text-2xl text-cream bg-primary-blue inline-block px-4 py-2 mb-8">2024</h3>
+      <div class="space-y-6 mb-16">
         <ArticleCard
           title="Animals as Chemical Factories"
           publication="Works in Progress"
-          description="Horses bled for antivenom, crabs drained for endotoxin tests, and silkworms boiled for silk. Science can now replace these practices with synthetic alternatives."
+          description="Horses bled for antivenom, crabs drained for endotoxin tests, and silkworms boiled for silk. Science can now replace these practices with synthetic alternatives — but we need to find ways to scale them. Co-authored with Niko McCarty."
           url="https://worksinprogress.co/issue/animals-as-chemical-factories/"
-          year={2024}
+          year="Dec 2024"
+          image={ogImages["https://worksinprogress.co/issue/animals-as-chemical-factories/"]}
+        />
+        <ArticleCard
+          title="Announcing the Pantone Color of the Year 02123"
+          publication="Long Now Foundation · Ideas"
+          description="A speculative look at color, culture, and long-term thinking for the Long Now Foundation."
+          url="https://longnow.org/ideas/pantone-02123/"
+          year="Nov 2024"
+          image={ogImages["https://longnow.org/ideas/pantone-02123/"]}
+        />
+        <ArticleCard
+          title="Farma: Speculative Gastronomy"
+          publication="Asimov Press · Fiction · Issue 04"
+          description="Despite years on the defensive, GMOs and other food technology can improve human and planetary health. A story about a futuristic restaurant in San Francisco — later brought to life as a real pop-up dinner during SF Climate Week 2025."
+          url="https://www.asimov.press/p/farma"
+          year="Oct 2024"
+          image={ogImages["https://www.asimov.press/p/farma"]}
         />
         <ArticleCard
           title="Raising Welfare for Lab Rodents"
-          publication="Asimov Press"
+          publication="Asimov Press · The Long Read"
           description="The science of animal welfare is exploding, offering new ways to improve conditions for millions of research animals a year."
           url="https://www.asimov.press/p/rodent-welfare"
-          year={2024}
+          year="Jul 2024"
+          image={ogImages["https://www.asimov.press/p/rodent-welfare"]}
+        />
+        <ArticleCard
+          title="Lessons on Starting a Magazine"
+          publication="Asimov Press · The Long Read"
+          description="After releasing a first book, hosting events, and commissioning about 35 essays, the Asimov Press team shares what they've learned about building a magazine from scratch."
+          url="https://www.asimov.press/p/lessons-on-starting-a-magazine"
+          year="May 2024"
+          image={ogImages["https://www.asimov.press/p/lessons-on-starting-a-magazine"]}
+        />
+        <ArticleCard
+          title="The Vector Zoo"
+          publication="Asimov Press · Fiction · Issue 02"
+          description="A guided tour of a future zoo that preserves the disease-carrying animals humanity has eradicated from the wild."
+          url="https://www.asimov.press/p/the-vector-zoo"
+          year="Mar 2024"
+          image={ogImages["https://www.asimov.press/p/the-vector-zoo"]}
         />
       </div>
-      <a href="/writing" class="inline-block mt-10 text-fire-orange-deep font-medium hover:text-fire-amber transition-colors">
-        View all writing &rarr;
-      </a>
+
+      <!-- 2023 -->
+      <h3 class="font-serif text-2xl text-cream bg-orange inline-block px-4 py-2 mb-8">2023</h3>
+      <div class="space-y-6 mb-16">
+        <ArticleCard
+          title="A Reflection on the Hunterian Museum"
+          publication="What's Working · Substack"
+          description="Not a menagerie of gore, but a fête of progress."
+          url="https://whatsworking.substack.com/p/a-reflection-on-the-hunterian-museum"
+          year="Jun 2023"
+          image={ogImages["https://whatsworking.substack.com/p/a-reflection-on-the-hunterian-museum"]}
+        />
+        <ArticleCard
+          title="Where Are the World's Best Places to Encounter 'Deep Time'?"
+          publication="The Long View · Substack"
+          description="Plus an article in The Observer, the 5 best books on long-term time, and more conversations about The Long View. Co-authored with Richard Fisher."
+          url="https://longviewer.substack.com/p/where-are-the-worlds-best-places"
+          year="Jun 2023"
+          image={ogImages["https://longviewer.substack.com/p/where-are-the-worlds-best-places"]}
+        />
+        <ArticleCard
+          title="What We Can Learn from an 80,000-Year-Old Organism"
+          publication="The Long View · Substack"
+          description="Meet the 'Trembling Giant.' Co-authored with Richard Fisher."
+          url="https://longviewer.substack.com/p/what-we-can-learn-from-an-80000-year"
+          year="Jun 2023"
+          image={ogImages["https://longviewer.substack.com/p/what-we-can-learn-from-an-80000-year"]}
+        />
+        <ArticleCard
+          title="'Serenteletonic': A Long View Neologism"
+          publication="The Long View · Substack"
+          description="In collaboration with The Bureau of Linguistical Reality. Co-authored with Richard Fisher."
+          url="https://longviewer.substack.com/p/serenteletonic-a-long-view-neologism"
+          year="May 2023"
+          image={ogImages["https://longviewer.substack.com/p/serenteletonic-a-long-view-neologism"]}
+        />
+        <ArticleCard
+          title="The Power of Long-Minded Art"
+          publication="The Long View · Substack"
+          description="How art encourages the long view. Co-authored with Richard Fisher."
+          url="https://longviewer.substack.com/p/the-power-of-long-minded-art"
+          year="May 2023"
+          image={ogImages["https://longviewer.substack.com/p/the-power-of-long-minded-art"]}
+        />
+        <ArticleCard
+          title="Tinned Fish Frenzy"
+          publication="What's Working · Substack"
+          description="The luxury of harm."
+          url="https://whatsworking.substack.com/p/tinned-fish-frenzy"
+          year="Mar 2023"
+          image={ogImages["https://whatsworking.substack.com/p/tinned-fish-frenzy"]}
+        />
+        <ArticleCard
+          title="Review: Future Superhuman by Elise Bohan"
+          publication="What's Working · Substack"
+          description="Plus musings on melanoma and another trip around the sun."
+          url="https://whatsworking.substack.com/p/review-future-superhuman-our-transhuman"
+          year="Jan 2023"
+          image={ogImages["https://whatsworking.substack.com/p/review-future-superhuman-our-transhuman"]}
+        />
+      </div>
+
+      <!-- 2022 -->
+      <h3 class="font-serif text-2xl text-cream bg-teal inline-block px-4 py-2 mb-8">2022</h3>
+      <div class="space-y-6">
+        <ArticleCard
+          title="They May as Well Grow on Trees"
+          publication="Asterisk Magazine · Fiction"
+          description="Set in 2053, a speculative story about genetically engineered livestock incapable of experiencing pain — exploring whether CRISPR and gene-editing can truly reconcile the meat industry with animal welfare."
+          url="https://asteriskmag.com/issues/01/they-may-as-well-grow-on-trees-the-future-of-genetically-engineered-livestock"
+          year="Nov 2022"
+          image={ogImages["https://asteriskmag.com/issues/01/they-may-as-well-grow-on-trees-the-future-of-genetically-engineered-livestock"]}
+        />
+        <ArticleCard
+          title="The Case for Reading Books"
+          publication="What's Working · Substack"
+          description="TL;DR — N/A."
+          url="https://whatsworking.substack.com/p/the-case-for-reading-books"
+          year="Jun 2022"
+          image={ogImages["https://whatsworking.substack.com/p/the-case-for-reading-books"]}
+        />
+        <ArticleCard
+          title="From Arsenic Poisoning to Vertical Gardening"
+          publication="What's Working · Substack"
+          description="A meditation on walls."
+          url="https://whatsworking.substack.com/p/from-arsenic-poisoning-to-vertical"
+          year="May 2022"
+          image={ogImages["https://whatsworking.substack.com/p/from-arsenic-poisoning-to-vertical"]}
+        />
+      </div>
     </div>
   </section>
 
-  <!-- Featured Fiction -->
-  <section class="max-w-5xl mx-auto px-6 py-16 md:py-24">
-    <h2 class="font-serif text-3xl md:text-4xl text-charcoal">Fiction</h2>
-    <p class="mt-4 text-charcoal-light text-lg max-w-2xl">
-      Speculative stories imagining plausible and positive futures — from restaurants embracing GMOs to zoos preserving disease vectors.
-    </p>
-    <div class="mt-10 space-y-6">
-      <ArticleCard
-        title="Farma: Speculative Gastronomy"
-        publication="Asimov Press · Fiction"
-        description="A restaurant that is bullish on GMOs and food technology imagines how our descendants might eat to support a food system less taxing on land, water, and energy."
-        url="https://www.asimov.press/p/farma"
-        year={2024}
-      />
-      <ArticleCard
-        title="The Vector Zoo"
-        publication="Asimov Press · Fiction"
-        description="In the year 2126, visitors tour a zoo that preserves the disease-carrying animals humanity has otherwise eradicated from the wild."
-        url="https://www.asimov.press/p/the-vector-zoo"
-        year={2024}
-      />
+  <!-- Contact -->
+  <section id="contact" class="bg-primary-blue">
+    <div class="max-w-5xl mx-auto px-6 py-16 md:py-24">
+      <h2 class="font-serif text-3xl md:text-4xl text-primary-yellow">Contact</h2>
+      <div class="mt-10 flex flex-wrap gap-6">
+        <a href="mailto:alexandrabalwit@gmail.com" class="text-cream/70 hover:text-primary-yellow transition-colors no-underline text-lg">Email</a>
+        <a href="https://x.com/XanderBalwit" target="_blank" rel="noopener" class="text-cream/70 hover:text-primary-yellow transition-colors no-underline text-lg">X / Twitter</a>
+        <a href="https://www.linkedin.com/in/xander-balwit/" target="_blank" rel="noopener" class="text-cream/70 hover:text-primary-yellow transition-colors no-underline text-lg">LinkedIn</a>
+      </div>
     </div>
-    <a href="/fiction" class="inline-block mt-10 text-fire-orange-deep font-medium hover:text-fire-amber transition-colors">
-      View all fiction &rarr;
-    </a>
   </section>
 </BaseLayout>

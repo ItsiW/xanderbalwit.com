@@ -3,25 +3,53 @@ interface Props {
   title: string;
   subtitle?: string;
   large?: boolean;
+  color?: 'red' | 'blue' | 'yellow' | 'teal' | 'orange' | 'green';
 }
 
-const { title, subtitle, large = false } = Astro.props;
+const { title, subtitle, large = false, color = 'red' } = Astro.props;
+
+const bgColors = {
+  red: 'bg-primary-red',
+  blue: 'bg-primary-blue',
+  yellow: 'bg-primary-yellow',
+  teal: 'bg-teal',
+  orange: 'bg-orange',
+  green: 'bg-green',
+};
+const textColors = {
+  red: 'text-cream',
+  blue: 'text-cream',
+  yellow: 'text-charcoal',
+  teal: 'text-primary-yellow',
+  orange: 'text-cream',
+  green: 'text-primary-yellow',
+};
+const subtitleColors = {
+  red: 'text-cream/80',
+  blue: 'text-cream/80',
+  yellow: 'text-charcoal-light',
+  teal: 'text-cream/80',
+  orange: 'text-cream/80',
+  green: 'text-cream/80',
+};
 ---
 
-<section class="bg-gradient-to-br from-fire-orange-deep via-fire-orange to-fire-yellow">
+<section class={bgColors[color]}>
   <div class:list={[
     'max-w-5xl mx-auto px-6',
     large ? 'py-24 md:py-36' : 'py-16 md:py-24'
   ]}>
     <h1 class:list={[
-      'font-serif font-bold text-cream',
+      'font-serif font-bold',
+      textColors[color],
       large ? 'text-5xl md:text-7xl' : 'text-4xl md:text-5xl'
     ]}>
       {title}
     </h1>
     {subtitle && (
       <p class:list={[
-        'mt-4 text-cream-dark/90',
+        'mt-4',
+        subtitleColors[color],
         large ? 'text-xl md:text-2xl max-w-2xl' : 'text-lg md:text-xl max-w-xl'
       ]}>
         {subtitle}

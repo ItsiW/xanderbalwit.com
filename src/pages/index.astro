@@ -12,7 +12,7 @@ import ogImages from '../data/og-images.json';
       <!-- Mobile: image + name side by side; Desktop: image standalone in flex row -->
       <div class="flex items-center gap-5 md:block">
         <img
-          src="/xander.jpg"
+          src="/xander.webp"
           alt="Xander Balwit"
           class="w-24 h-24 md:w-64 md:h-64 object-cover rounded shrink-0"
         />
@@ -49,13 +49,13 @@ import ogImages from '../data/og-images.json';
   <section id="about" class="max-w-5xl mx-auto px-6 py-16 md:py-24">
     <div class="max-w-3xl">
       <p class="text-charcoal-light text-lg leading-relaxed">
-        I work on the editorial team at Anthropic. Previously, I was the editor-in-chief of <a href="https://press.asimov.com" target="_blank" rel="noopener">Asimov Press</a>, a digital magazine dedicated to biotechnology, metascience, and scientific progress. My writing explores the technologies and ideas that enable flourishing — from animal welfare and longevity to food systems and neuroscience.
+        I work on the editorial team at <a href="https://www.anthropic.com" target="_blank" rel="noopener">Anthropic</a>. Previously, I was the editor-in-chief of <a href="https://press.asimov.com" target="_blank" rel="noopener">Asimov Press</a>, a publication dedicated to biotechnology, metascience, and scientific progress. For two years, I managed our editorial pipeline, working closely with our authors to develop essays that were rigorous, beautiful, and thorough. My own writing explores themes from animal welfare and longevity to food systems and neuroscience.
       </p>
       <p class="mt-4 text-charcoal-light text-lg leading-relaxed">
-        Before building Asimov Press, I worked as a wildland firefighter, managed a political campaign, and attended Portland State University, where I studied Arts and Letters, Liberal Studies, and German Fairytales.
+        Before building Asimov Press, I worked as a wildland firefighter, managed a political campaign, and studied German fairytales.
       </p>
       <p class="mt-4 text-charcoal-light text-lg leading-relaxed">
-        My work has appeared in <a href="https://press.asimov.com" target="_blank" rel="noopener">Asimov Press</a>, <a href="https://worksinprogress.co" target="_blank" rel="noopener">Works in Progress</a>, <a href="https://asteriskmag.com" target="_blank" rel="noopener">Asterisk Magazine</a>, the <a href="https://longnow.org" target="_blank" rel="noopener">Long Now Foundation</a>, and <a href="https://longviewer.substack.com" target="_blank" rel="noopener">The Long View</a>. I also write a personal Substack called <a href="https://whatsworking.substack.com" target="_blank" rel="noopener">What's Working</a>.
+        My work has appeared in <a href="https://press.asimov.com" target="_blank" rel="noopener">Asimov Press</a>, <a href="https://worksinprogress.co" target="_blank" rel="noopener">Works in Progress</a>, <a href="https://asteriskmag.com" target="_blank" rel="noopener">Asterisk Magazine</a>, the <a href="https://longnow.org" target="_blank" rel="noopener">Long Now Foundation</a>, and elsewhere. I also write a personal Substack called <a href="https://whatsworking.substack.com" target="_blank" rel="noopener">What's Working</a>.
       </p>
     </div>
   </section>
@@ -291,7 +291,7 @@ import ogImages from '../data/og-images.json';
 
       <!-- 2022 -->
       <h3 class="font-serif text-2xl text-cream bg-teal inline-block px-4 py-2 mb-8">2022</h3>
-      <div class="space-y-6">
+      <div class="space-y-6 mb-16">
         <ArticleCard
           title="They May as Well Grow on Trees"
           publication="Asterisk Magazine · Fiction"
@@ -315,6 +315,35 @@ import ogImages from '../data/og-images.json';
           url="https://whatsworking.substack.com/p/from-arsenic-poisoning-to-vertical"
           year="May 2022"
           image={ogImages["https://whatsworking.substack.com/p/from-arsenic-poisoning-to-vertical"]}
+        />
+        <ArticleCard
+          title="Night Bees: An Introduction to Bat Pollination"
+          publication="Grounded Grub"
+          description="Over 500 bat species pollinate plants we love — bananas, coffee, chocolate, and agave. An exploration of bat pollination and its critical importance to global food systems."
+          url="https://groundedgrub.com/articles/night-bees-bat-pollination"
+          year="Feb 2022"
+          image="/bat-pollination.jpg"
+        />
+      </div>
+
+      <!-- 2020 -->
+      <h3 class="font-serif text-2xl text-cream bg-primary-red inline-block px-4 py-2 mb-8">2020</h3>
+      <div class="space-y-6">
+        <ArticleCard
+          title="Entomophagy: A New Meaning To 'Tasty Grub'"
+          publication="Grounded Grub"
+          description="An argument for reconsidering insect consumption as a sustainable protein alternative — exploring the environmental, health, and cultural dimensions of eating bugs."
+          url="https://groundedgrub.com/articles/entomophagy-a-new-meaning-to-tasty-grub"
+          year="Oct 2020"
+          image="/entomophagy.webp"
+        />
+        <ArticleCard
+          title="Alligator Ball"
+          publication="LandLocked · Vol. 2.2"
+          description="After a class on the philosophy of sports, I was inspired to explore the theme of 'spectacularization.' How better than if soccer was played alongside alligators?"
+          url="https://landlocked-magazine.com/wp-content/uploads/2024/05/LandLocked-2.2-.pdf"
+          year="Jul 2020"
+          image="/landlocked2-2.jpg"
         />
       </div>
     </div>

@@ -7,16 +7,17 @@ interface Props {
 }
 
 const { title, role, description, url } = Astro.props;
+const Tag = url ? 'a' : 'div';
 ---
 
-<div class="bg-cream p-6 border-t-4 border-teal hover:border-primary-red transition-colors">
-  {url ? (
-    <a href={url} target="_blank" rel="noopener" class="no-underline group">
-      <h3 class="font-serif text-xl text-charcoal group-hover:text-primary-red transition-colors">{title}</h3>
-    </a>
-  ) : (
-    <h3 class="font-serif text-xl text-charcoal">{title}</h3>
-  )}
+<Tag
+  {...(url ? { href: url, target: "_blank", rel: "noopener" } : {})}
+  class:list={[
+    "block bg-cream p-6 border-t-4 border-teal hover:border-primary-red transition-colors no-underline group",
+    url && "cursor-pointer"
+  ]}
+>
+  <h3 class="font-serif text-xl text-charcoal group-hover:text-primary-red transition-colors">{title}</h3>
   <p class="text-sm font-medium text-orange mt-1">{role}</p>
   <p class="text-charcoal-light mt-3 text-sm leading-relaxed">{description}</p>
-</div>
+</Tag>
